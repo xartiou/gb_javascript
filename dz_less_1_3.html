@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+        // сначала суммируем числа, а т.к. "10" строка - происходит конкатенация 20 и 10 
+        let result1 = 10 + 10 + "10";
+        console.log(result1);
+
+        // за первым числом идет строка она и превращает элементы в строку и конкатенируем
+        let result2 = 10 + "10" + 10;
+        console.log(result2);
+
+        // знак + приводит строку к числу, поэтому суммируем
+        let result3 = 10 + 10 + +"10";
+        console.log(result3);
+
+        // делим на пустую строку приведенную к числу и получаем отр. бесконечность
+        let result4 = 10 / -"";
+        console.log(result4);
+
+        // т.к. делитель получается NaN то и результат NaN
+        let result5 = 10 / +"2,5";
+        console.log(result5);
+
+    </script>
+</body>
+
+</html>
