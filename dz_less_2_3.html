@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* Объявить две переменные a и b и задать им целочисленные произвольные начальные
+значения.
+Затем написать скрипт, который работает по следующему принципу:
+- если a и b положительные, вывести их разность (ноль можно считать положительным числом);
+- если а и b отрицательные, вывести их произведение;
+- * (этот пункт по сложнее, делайте по желанию) если а и b разных знаков, вывести их сумму;
+*/
+        "use stict";
+
+        let a = parseInt(prompt('Введите целочисленные произвольные начальные значения'));
+        let b = parseInt(prompt('Введите целочисленные произвольные начальные значения'));
+        if (a >= 0 && b >= 0) {
+            let dif = (a - b);
+            alert("Разность чисел = " + dif);
+        } else if (a < 0 && b < 0) {
+            let mult = (a * b)
+            alert("Произведение чисел = " + mult);
+        } else if (a >= 0 && b < 0 || a < 0 && b >= 0) {
+            let sum = (a + b)
+            alert("Сумма чисел = " + sum);
+        }
+
+
+
+    </script>
+</body>
+
+</html>
