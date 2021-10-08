@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict'
+        /*
+        Сделайте в стиле es5 (по аналогии из дополнительных
+        видео -> 3 примеры наследования -> механика наследования),
+        а) конструктор Post, который принимает параметры author, text, date и сохраняет их как свойства объекта. Объекты
+        типа Post должны иметь метод edit, который будет принимать текст и записывать его в свойство text объекта.
+        б) конструктор AttachedPost, который принимает параметры author, text, date. Проинициализируйте эти свойства с
+        помощью конструктора Post, чтобы не дублировать код. Также в конструкторе AttachedPost должно создаваться
+        свойство highlighted со значением false. Унаследуйте в объектах типа AttachedPost методы из Post.
+        Объекты типа AttachedPost должны иметь метод makeTextHighlighted, который будет назначать свойству
+        highlighted значение true.
+        */
+        // a)
+        // создаем функцию конструктор Post
+        function Post(author, text, date) {
+            this.author = author;
+            this.text = text;
+            this.date = date;
+        }
+        // для Post создаем метод edit для записи нового текста
+        Post.prototype.edit = function (text) {
+            this.text = text;
+        }
+
+        const myPost = new Post('Семён', 'просто текст', new Date()); //Создаём экземпляр объекта Date, представляющего собой момент времени. 
+        /*
+        объекты Date могут быть созданы только путём вызова функции Date в качестве конструктора: обычный вызов функции (то есть, без использования оператора new) вернёт строку вместо объекта Date
+        */
+        console.log(myPost);
+        myPost.edit('Текст Семёна');
+        console.log(myPost);
+
+        // б)
+        // создаем функцию конструктор AttachedPost
+        function AttachedPost(author, text, date) {
+            // инициализируем эти свойства с помощью конструктора Post
+            Post.call(this, author, text, date);
+            // создаем свойство highlighted со значением false
+            this.highlighted = false;
+        }
+
+        // методы из Post наследуем в AttachedPost
+        AttachedPost.prototype = Object.create(Post.prototype);
+        AttachedPost.prototype.constructor = AttachedPost;
+
+        AttachedPost.prototype.makeTextHighlighted = function () {
+            // создаем свойство highlighted со значением true
+            this.highlighted = true;
+        }
+
+        const myAttachedPost = new AttachedPost('Боря', 'Где Семён', new Date());
+        console.log(myAttachedPost);
+        myAttachedPost.makeTextHighlighted();
+        myAttachedPost.edit('Вот Семён');
+        console.log(myAttachedPost);
+    </script>
+</body>
+
+</html>
