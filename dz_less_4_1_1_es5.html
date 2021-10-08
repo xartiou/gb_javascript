@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict'
+        /*
+        Сделайте в стиле es5, а затем в стиле es6 (по аналогии из дополнительных
+        видео -> 3 примеры наследования -> типы на es5 и es6), конструктор Product, который принимает параметры name
+        и price, сохраните их как свойства объекта. Также объекты типа Product должны иметь метод
+        make25PercentDiscount, который будет уменьшать цену в объекте на 25%. Имейте в виду, что метод
+        make25PercentDiscount не должен быть внутри функции-конструктора, и также не нужно создавать отдельный
+        объект-прототип (как объект transport в уроке).
+        */
+
+        /*
+        Конструктор позволяет произвести начальную инициализацию, которая должна быть выполнена до того, как остальные методы вызваны.
+        Синтаксис  constructor([arguments]) { ... }
+        */
+
+        // Создаем функцию-конструктор Product, которая принимает параметры name и price
+
+        function Product(name, price) {
+            this.name = name;
+            this.price = price;
+        }
+
+        // все объекты наследуют методы и свойства из прототипа объекта Object.prototype, хотя они и могут быть переопределены
+
+        Product.prototype.make25PercentDiscount = function () {
+            this.price = this.price - (this.price * 25 / 100);
+        };
+
+        const myProduct = new Product('Хлебушек', 40);
+        myProduct.make25PercentDiscount();
+
+        console.log(myProduct);
+
+    </script>
+</body>
+
+</html>
