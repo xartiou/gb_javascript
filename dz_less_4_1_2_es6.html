@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict'
+        /*
+        Сделайте в стиле  es6 (по аналогии из дополнительных
+        видео -> 3 примеры наследования -> механика наследования),
+        а) конструктор Post, который принимает параметры author, text, date и сохраняет их как свойства объекта. Объекты
+        типа Post должны иметь метод edit, который будет принимать текст и записывать его в свойство text объекта.
+        б) конструктор AttachedPost, который принимает параметры author, text, date. Проинициализируйте эти свойства с
+        помощью конструктора Post, чтобы не дублировать код. Также в конструкторе AttachedPost должно создаваться
+        свойство highlighted со значением false. Унаследуйте в объектах типа AttachedPost методы из Post.
+        Объекты типа AttachedPost должны иметь метод makeTextHighlighted, который будет назначать свойству
+        highlighted значение true.
+        */
+        // а)
+        // создаем класс Post это означает что будет создан конструктор с параметрами
+        class Post {
+            constructor(author, text, date) {
+                this.author = author;
+                this.text = text;
+                this.date = date;
+            }
+            // создаем метод edit для записи нового текста
+            edit(text) {
+                this.text = text;
+            }
+        }
+
+        const myPost = new Post('Семён', 'купи хлеба', new Date());
+        console.log(myPost);
+        myPost.edit('купи молока');
+        console.log(myPost);
+
+        // б)
+        // создаем класс AttachedPost, который унаследует методы из Post в конструкторе
+        class AttachedPost extends Post {
+            // в конструкторе rлючевое слово super используется для вызова функций, принадлежащих родителю объекта.
+            constructor(author, text, date) {
+                super(author, text, date);
+                // создаем свойство highlighted со значением false
+                this.highlighted = false;
+            }
+            // метод makeTextHighlighted будет назначать свойству highlighted значение true
+            makeTextHighlighted() {
+                this.highlighted = true;
+            }
+        }
+
+        const myAttachedPost = new AttachedPost('Боря', 'иди домой', new Date());
+        console.log(myAttachedPost);
+        myAttachedPost.makeTextHighlighted();
+        myAttachedPost.edit('пошли гулять');
+        console.log(myAttachedPost);
+
+    </script>
+</body>
+
+</html>
