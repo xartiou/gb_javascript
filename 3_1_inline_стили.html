@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>Кнопка</button>
+    <textarea></textarea>
+
+    <!-- Задание. Сделайте с помощью javascript размер шрифта в кнопке 30px,
+    а в textarea сделайте зеленый фон. Используйте свойство style у каждого
+    из элементов. -->
+
+    <script>
+        'use strict';
+        /*
+        Document метод querySelector() возвращает первый элемент (Element) документа, который соответствует указанному селектору или группе селекторов.
+        */
+        let newButton = document.querySelector('button');
+
+        newButton.style.fontSize = '30px'; // Свойство font-size определяет размер шрифта. 
+
+        let newTextArea = document.querySelector('textarea');
+
+        newTextArea.style.background = 'green'; // свойство background  устанавливает сразу все свойства стиля фона, такие как цвет, изображение, источник и размер
+    </script>
+</body>
+
+</html>
