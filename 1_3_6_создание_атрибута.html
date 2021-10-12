@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Заголовок</h1>
+
+    <!-- Задание. Добавьте заголовку атрибут data-one="один" и атрибут
+        data-two="два" с помощью метода setAttribute. -->
+
+    <script>
+        'use strict';
+        /*
+        */
+        let myHeading = document.querySelector('h1');
+        /*
+        Element.setAttribute()
+        Добавляет новый атрибут или изменяет значение существующего атрибута у выбранного элемента.
+        Синтаксис
+        element.setAttribute(name, value);
+        name - имя атрибута (строка).
+        value  - значение атрибута.
+        */
+        myHeading.setAttribute('data-one', 'один');
+        myHeading.setAttribute('data-two', 'два');
+
+    </script>
+
+</body>
+
+</html>

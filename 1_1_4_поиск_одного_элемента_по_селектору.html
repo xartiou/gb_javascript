@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0"
+            aria-valuemax="100"></div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0"
+            aria-valuemax="100"></div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0"
+            aria-valuemax="100"></div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0"
+            aria-valuemax="100"></div>
+    </div>
+
+    <!-- Задание. Используя поиск по селектору (метод querySelector) найдите div с атрибутом
+        aria-valuenow="50" и выведите его в консоль. -->
+
+
+    <script>
+        'use strict';
+        /*
+        Document.querySelector()
+        Document метод querySelector() возвращает первый элемент (Element) документа, который соответствует указанному селектору или группе селекторов. Если совпадений не найдено, возвращает значение null.
+        Синтаксис
+        element = document.querySelector(selectors);
+        в нашем случае Селекторы по атрибуту
+        Этот селектор выбирает все элементы, имеющие данный атрибут или атрибут с определённым значением.
+        Синтаксис: [attr] [attr=value] [attr~=value] [attr|=value] [attr^=value] [attr$=value] [attr*=value]
+        Пример: селектор [autoplay] выберет все элементы, у которых есть  атрибут autoplay (независимо от его значения).
+        */
+        let searched_div = document.querySelector('[aria-valuenow="50"]');
+        console.log(searched_div);
+
+    </script>
+</body>
+
+</html>
