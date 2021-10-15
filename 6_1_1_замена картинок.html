@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="images/1.jpg" alt="">
+
+    <!-- Задание. Сделайте чтобы в src была картинка 2.jpg, для этого:
+    1. Найдите картинку, например с помощью querySelector
+    2. Измените атрибут src, например с помощью setAttribute -->
+
+    <script>
+        'use strict';
+        //1. Найдите картинку, например с помощью querySelector
+        let img = document.querySelector('img');
+
+        // 2. Измените атрибут src, например с помощью setAttribute
+        // Element.setAttribute() Добавляет новый атрибут или изменяет значение существующего атрибута у выбранного элемента
+        // существующий атрибут src="images/1.jpg" меняем на "images/2.jpg"
+
+        img.setAttribute("src", "images/2.jpg");
+
+    </script>
+</body>
+
+</html>
