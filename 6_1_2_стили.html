@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>Lorem, ipsum dolor.</div>
+    <div>Lorem, ipsum dolor.</div>
+    <div>Lorem, ipsum dolor.</div>
+
+    <!-- Задание. Найдите все дивы и добавьте им padding: 10px, для этого:
+    1. Найдите все дивы, например с помощью getElementsByTagName.
+    2. Затем с помощью цикла пройдитесь по этой коллекции, и обращаясь к
+    каждому элементу, обратитесь к его свойству style, а затем к свойству
+    padding. -->
+
+    <script>
+        'use strict';
+        // 1. Найдите все дивы, например с помощью getElementsByTagName.
+        let myDivs = document.getElementsByTagName("div");
+        //2. Затем с помощью цикла пройдитесь по этой коллекции, и обращаясь к каждому элементу, обратитесь к его свойству style, а затем к свойству padding.
+        // будем использовать цикл for в котором пройдем по каждому div в нашей коллекции myDivs
+        //  каждому div через style.padding добавим значение 10px
+        for (let i = 0; i < divs.length; i++) {
+            divs[i].style.padding = '10px';
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>
